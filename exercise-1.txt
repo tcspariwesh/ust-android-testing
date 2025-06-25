@@ -1,0 +1,73 @@
+## Exercise: Design a Basic Online Shopping Cart System
+
+**Requirements:**
+
+1. **Product Class**  
+   - Represents a product with `id`, `name`, `price`, and `quantityInStock`.
+   - Include proper constructors, getters/setters, and a method to display product info.
+
+2. **CartItem Class**
+   - Represents an item in the shopping cart.
+   - Contains a reference to a `Product` and a `quantity` to purchase.
+   - Method to get total price for the cart item.
+
+3. **ShoppingCart Class**
+   - Contains a list of `CartItem` objects.
+   - Methods to add, remove, and update quantity of items.
+   - Method to calculate total price of the cart.
+   - Method to display cart details.
+
+4. **Customer Class**
+   - Represents a customer with name, email, and a `ShoppingCart`.
+   - Methods to view and clear the cart.
+
+5. **Optional: Discount**
+   - Add a `Discount` interface and a couple of implementations (e.g., percentage discount, fixed amount discount).
+   - ShoppingCart can accept a discount and apply it to the total.
+
+---
+
+### Example (Skeleton Classes):
+
+```java
+public class Product {
+    private String id;
+    private String name;
+    private double price;
+    private int quantityInStock;
+    // Constructors, getters, setters, displayInfo()
+}
+
+public class CartItem {
+    private Product product;
+    private int quantity;
+    // Constructor, getters, setters, getTotalPrice()
+}
+
+public class ShoppingCart {
+    private List<CartItem> items;
+    // addItem(), removeItem(), updateQuantity(), getTotalPrice(), displayCart()
+}
+
+public class Customer {
+    private String name;
+    private String email;
+    private ShoppingCart cart;
+    // getCart(), clearCart(), etc.
+}
+```
+
+**Optional Discount Interface:**
+```java
+public interface Discount {
+    double applyDiscount(double amount);
+}
+```
+
+---
+
+### Tasks
+
+- Implement the above classes with encapsulation and good design principles.
+- Demonstrate usage: Create a main method to show adding products to the cart, updating quantities, and checking out.
+- (Optional) Implement and apply a discount.
